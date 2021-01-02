@@ -29,6 +29,13 @@
         scene.add(cube);
 
         camera.position.z = 5;
+
+        // animate is do rendering a scene.
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
     </script>
 </body>
 
