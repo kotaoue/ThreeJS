@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My first three.js app</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="js/three.js"></script>
+    <script>
+        // Create Scene.
+        const scene = new THREE.Scene();
+        const aspect = window.innerWidth / window.innerHeight;
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Add Camera.
+        const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
+        camera.position.set(0, 0, 200);
+
+        // Add Texture.
+        var mesh;
+        const loader = new THREE.TextureLoader();
+        // for CORS.
+        loader.load('https://kotaoue.github.io/ThreeJS/images/my_icon.png', function (texture) {
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
+            mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+        });
+
+        camera.position.z = 5;
+
+
+        // animate is do rendering a scene.
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+
+            mesh.rotation.x += Math.random() / 10;
+            mesh.rotation.y += Math.random() / 10;
+            mesh.rotation.z += Math.random() / 10;
+        }
+        animate();
+    </script>
+</body>
+
+</html>
