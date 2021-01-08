@@ -34,14 +34,6 @@
         plight.position.set(-50, -100, -100);
         scene.add(plight);
 
-        // Add Floor.
-        const meshFloor = new THREE.Mesh(
-            new THREE.PlaneGeometry(100, 100, 100),
-            new THREE.MeshStandardMaterial({ color: 0x808080, roughness: 0.0 })
-        );
-        meshFloor.rotation.x = 10;
-        scene.add(meshFloor);
-
         // Add Object.
         const geometry = new THREE.TorusKnotGeometry();
         // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
