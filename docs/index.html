@@ -37,7 +37,10 @@
         // Add Object.
         const geometry = new THREE.TorusKnotGeometry();
         // const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
-        const material = new THREE.MeshNormalMaterial();
+        // const material = new THREE.MeshNormalMaterial();
+        // const material = new THREE.MeshLambertMaterial({ color: 0x6699FF });
+        const material = new THREE.MeshToonMaterial({ color: 0x6699FF });
+
 
         const mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
