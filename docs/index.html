@@ -35,12 +35,12 @@
         scene.add(plight);
 
         // Add Object.
-        const geometry = new THREE.TorusKnotGeometry(2, 0.1, 64, 16, 3, 8);
+        const geometry = new THREE.TorusKnotGeometry(2, 0.1, 64, 16, 15, 16);
         // const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
         // const material = new THREE.MeshNormalMaterial();
         // const material = new THREE.MeshLambertMaterial({ color: 0x6699FF });
         // const material = new THREE.MeshToonMaterial({ color: 0x6699FF });
-        const material = new THREE.MeshStandardMaterial({ color: 0x6699FF, roughness: 0.2 });
+        const material = new THREE.MeshStandardMaterial({ color: 0x6699FF, roughness: 0.1 });
 
         const mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
