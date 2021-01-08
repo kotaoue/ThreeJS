@@ -26,11 +26,23 @@
         camera.position.z = 5;
 
         // Add Light.
-        const light = new THREE.AmbientLight(0xFFFFFF, 1.0);
-        scene.add(light);
+        const dlight = new THREE.DirectionalLight(0xFFFFFF, 1);
+        dlight.position.set(-50, 50, 50);
+        scene.add(dlight);
 
-        // Add Cube.
-        const geometry = new THREE.BoxGeometry();
+        const plight = new THREE.PointLight(0xFFFFFF, 2, 50, 1.0);
+        plight.position.set(-50, -100, -100);
+        scene.add(plight);
+
+        // Add Floor.
+        const meshFloor = new THREE.Mesh(
+            new THREE.BoxGeometry(2000, -20, 2000),
+            new THREE.MeshStandardMaterial({ color: 0x808080, roughness: 0.0 })
+        );
+        scene.add(meshFloor);
+
+        // Add Object.
+        const geometry = new THREE.TorusKnotGeometry();
         // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
         const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
 
