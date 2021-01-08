@@ -35,7 +35,7 @@
         scene.add(plight);
 
         // Add Object.
-        const geometry = new THREE.TorusKnotGeometry(2, 0.1, 128, 32, 5, 7);
+        const geometry = new THREE.TorusKnotGeometry(2, 0.1, 64, 16, 3, 8);
         // const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
         // const material = new THREE.MeshNormalMaterial();
         // const material = new THREE.MeshLambertMaterial({ color: 0x6699FF });
@@ -50,8 +50,9 @@
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
 
-            mesh.rotation.x += 0.01;
-            mesh.rotation.y += 0.01;
+            // mesh.rotation.x += 0.005;
+            // mesh.rotation.y += 0.01;
+            mesh.rotation.z += 0.01;
         }
         animate();
     </script>
