@@ -6,7 +6,7 @@ import {
 	Loader,
 	LoaderUtils,
 	Vector3
-} from 'https://kotaoue.github.io/ThreeJS/build/three.module.js';
+} from 'https://kotaoue.github.io/ThreeJS/build/three.mjs';
 
 /**
  * Description: A THREE loader for STL ASCII files, as created by Solidworks and other CAD programs.
