@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="js/three.js"></script>
-    <script type="text/javascript" src="jsm/loaders/STLLoader.js"></script>
-    <script>
-        // Create Scene.
+    <script type="module">
+        import * as THREE from '../build/three.module.js';
+        import { STLLoader } from './jsm/loaders/STLLoader.js';
+
         const scene = new THREE.Scene();
         const aspect = window.innerWidth / window.innerHeight;
 
